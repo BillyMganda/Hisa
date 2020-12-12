@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HisaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LPO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrderDate" Type="date" />
+          <Property Name="OrderTime" Type="time" Precision="7" />
+          <Property Name="OrderNumber" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RefNumber" Type="int" />
+          <Property Name="RequestBy" Type="varchar" MaxLength="50" />
+          <Property Name="ExpectedDeliveryDate" Type="date" />
+          <Property Name="SupplierName" Type="varchar" MaxLength="250" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Telephone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="PurchasingOfficer" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentMode" Type="varchar" MaxLength="50" />
+          <Property Name="ItemName" Type="varchar" MaxLength="50" />
+          <Property Name="Units" Type="varchar" MaxLength="50" />
+          <Property Name="UnitPrice" Type="varchar" MaxLength="50" />
+          <Property Name="SOH" Type="varchar" MaxLength="50" />
+          <Property Name="Requested" Type="varchar" MaxLength="50" />
+          <Property Name="ToOrder" Type="varchar" MaxLength="50" />
+          <Property Name="VAT" Type="varchar" MaxLength="50" />
+          <Property Name="Net" Type="varchar" MaxLength="50" />
+          <Property Name="TotalAmount" Type="varchar" MaxLength="50" />
+          <Property Name="TotalTotalAmount" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="HisaModelStoreContainer">
+          <EntitySet Name="LPO" EntityType="Self.LPO" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HisaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LPO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDate" Type="DateTime" Precision="0" />
+          <Property Name="OrderTime" Type="Time" Precision="7" />
+          <Property Name="OrderNumber" Type="Guid" Nullable="false" />
+          <Property Name="RefNumber" Type="Int32" />
+          <Property Name="RequestBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExpectedDeliveryDate" Type="DateTime" Precision="0" />
+          <Property Name="SupplierName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PurchasingOfficer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Units" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SOH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Requested" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ToOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Net" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TotalTotalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="HisaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LPOes" EntityType="Self.LPO" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HisaModelStoreContainer" CdmEntityContainer="HisaEntities">
+          <EntitySetMapping Name="LPOes">
+            <EntityTypeMapping TypeName="HisaModel.LPO">
+              <MappingFragment StoreEntitySet="LPO">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="RefNumber" ColumnName="RefNumber" />
+                <ScalarProperty Name="RequestBy" ColumnName="RequestBy" />
+                <ScalarProperty Name="ExpectedDeliveryDate" ColumnName="ExpectedDeliveryDate" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="PurchasingOfficer" ColumnName="PurchasingOfficer" />
+                <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+                <ScalarProperty Name="Units" ColumnName="Units" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="SOH" ColumnName="SOH" />
+                <ScalarProperty Name="Requested" ColumnName="Requested" />
+                <ScalarProperty Name="ToOrder" ColumnName="ToOrder" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="Net" ColumnName="Net" />
+                <ScalarProperty Name="TotalAmount" ColumnName="TotalAmount" />
+                <ScalarProperty Name="TotalTotalAmount" ColumnName="TotalTotalAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

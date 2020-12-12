@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_Request_StockItems" targetNamespace="http://tempuri.org/DataSet_Request_StockItems.xsd" xmlns:mstns="http://tempuri.org/DataSet_Request_StockItems.xsd" xmlns="http://tempuri.org/DataSet_Request_StockItems.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HisaConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HisaConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Hisa.Properties.Settings.GlobalReference.Default.HisaConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Requests_StockItemsTableAdapter" GeneratorDataComponentClassName="Requests_StockItemsTableAdapter" Name="Requests_StockItems" UserDataComponentName="Requests_StockItemsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HisaConnectionString1 (Settings)" DbObjectName="Hisa.dbo.Requests_StockItems" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Requested_By, Request_Number, Department, Shift, Issue_Date, Issue_Time, Issue_Number, Issued_By, Received_By, ItemName, ItemCode, Units, SOH, Requested, Issued, UnitPrice, TotalPrice, TotalTotalPrice, Approved_By, MainGroup, SubGroup FROM dbo.Requests_StockItems</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Requested_By" DataSetColumn="Requested_By" />
+              <Mapping SourceColumn="Request_Number" DataSetColumn="Request_Number" />
+              <Mapping SourceColumn="Department" DataSetColumn="Department" />
+              <Mapping SourceColumn="Shift" DataSetColumn="Shift" />
+              <Mapping SourceColumn="Issue_Date" DataSetColumn="Issue_Date" />
+              <Mapping SourceColumn="Issue_Time" DataSetColumn="Issue_Time" />
+              <Mapping SourceColumn="Issue_Number" DataSetColumn="Issue_Number" />
+              <Mapping SourceColumn="Issued_By" DataSetColumn="Issued_By" />
+              <Mapping SourceColumn="Received_By" DataSetColumn="Received_By" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="ItemCode" DataSetColumn="ItemCode" />
+              <Mapping SourceColumn="Units" DataSetColumn="Units" />
+              <Mapping SourceColumn="SOH" DataSetColumn="SOH" />
+              <Mapping SourceColumn="Requested" DataSetColumn="Requested" />
+              <Mapping SourceColumn="Issued" DataSetColumn="Issued" />
+              <Mapping SourceColumn="UnitPrice" DataSetColumn="UnitPrice" />
+              <Mapping SourceColumn="TotalPrice" DataSetColumn="TotalPrice" />
+              <Mapping SourceColumn="TotalTotalPrice" DataSetColumn="TotalTotalPrice" />
+              <Mapping SourceColumn="Approved_By" DataSetColumn="Approved_By" />
+              <Mapping SourceColumn="MainGroup" DataSetColumn="MainGroup" />
+              <Mapping SourceColumn="SubGroup" DataSetColumn="SubGroup" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_Request_StockItems" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Request_StockItems" msprop:Generator_UserDSName="DataSet_Request_StockItems">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Requests_StockItems" msprop:Generator_TableClassName="Requests_StockItemsDataTable" msprop:Generator_TableVarName="tableRequests_StockItems" msprop:Generator_TablePropName="Requests_StockItems" msprop:Generator_RowDeletingName="Requests_StockItemsRowDeleting" msprop:Generator_RowChangingName="Requests_StockItemsRowChanging" msprop:Generator_RowEvHandlerName="Requests_StockItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="Requests_StockItemsRowDeleted" msprop:Generator_UserTableName="Requests_StockItems" msprop:Generator_RowChangedName="Requests_StockItemsRowChanged" msprop:Generator_RowEvArgName="Requests_StockItemsRowChangeEvent" msprop:Generator_RowClassName="Requests_StockItemsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Requested_By" msprop:Generator_ColumnVarNameInTable="columnRequested_By" msprop:Generator_ColumnPropNameInRow="Requested_By" msprop:Generator_ColumnPropNameInTable="Requested_ByColumn" msprop:Generator_UserColumnName="Requested_By" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Request_Number" msprop:Generator_ColumnVarNameInTable="columnRequest_Number" msprop:Generator_ColumnPropNameInRow="Request_Number" msprop:Generator_ColumnPropNameInTable="Request_NumberColumn" msprop:Generator_UserColumnName="Request_Number" type="xs:int" minOccurs="0" />
+              <xs:element name="Department" msprop:Generator_ColumnVarNameInTable="columnDepartment" msprop:Generator_ColumnPropNameInRow="Department" msprop:Generator_ColumnPropNameInTable="DepartmentColumn" msprop:Generator_UserColumnName="Department" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Shift" msprop:Generator_ColumnVarNameInTable="columnShift" msprop:Generator_ColumnPropNameInRow="Shift" msprop:Generator_ColumnPropNameInTable="ShiftColumn" msprop:Generator_UserColumnName="Shift" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Issue_Date" msprop:Generator_ColumnVarNameInTable="columnIssue_Date" msprop:Generator_ColumnPropNameInRow="Issue_Date" msprop:Generator_ColumnPropNameInTable="Issue_DateColumn" msprop:Generator_UserColumnName="Issue_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Issue_Time" msprop:Generator_ColumnVarNameInTable="columnIssue_Time" msprop:Generator_ColumnPropNameInRow="Issue_Time" msprop:Generator_ColumnPropNameInTable="Issue_TimeColumn" msprop:Generator_UserColumnName="Issue_Time" type="xs:duration" minOccurs="0" />
+              <xs:element name="Issue_Number" msprop:Generator_ColumnVarNameInTable="columnIssue_Number" msprop:Generator_ColumnPropNameInRow="Issue_Number" msprop:Generator_ColumnPropNameInTable="Issue_NumberColumn" msprop:Generator_UserColumnName="Issue_Number" type="xs:int" minOccurs="0" />
+              <xs:element name="Issued_By" msprop:Generator_ColumnVarNameInTable="columnIssued_By" msprop:Generator_ColumnPropNameInRow="Issued_By" msprop:Generator_ColumnPropNameInTable="Issued_ByColumn" msprop:Generator_UserColumnName="Issued_By" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Received_By" msprop:Generator_ColumnVarNameInTable="columnReceived_By" msprop:Generator_ColumnPropNameInRow="Received_By" msprop:Generator_ColumnPropNameInTable="Received_ByColumn" msprop:Generator_UserColumnName="Received_By" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" msprop:Generator_UserColumnName="ItemName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemCode" msprop:Generator_ColumnVarNameInTable="columnItemCode" msprop:Generator_ColumnPropNameInRow="ItemCode" msprop:Generator_ColumnPropNameInTable="ItemCodeColumn" msprop:Generator_UserColumnName="ItemCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Units" msprop:Generator_ColumnVarNameInTable="columnUnits" msprop:Generator_ColumnPropNameInRow="Units" msprop:Generator_ColumnPropNameInTable="UnitsColumn" msprop:Generator_UserColumnName="Units" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SOH" msprop:Generator_ColumnVarNameInTable="columnSOH" msprop:Generator_ColumnPropNameInRow="SOH" msprop:Generator_ColumnPropNameInTable="SOHColumn" msprop:Generator_UserColumnName="SOH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Requested" msprop:Generator_ColumnVarNameInTable="columnRequested" msprop:Generator_ColumnPropNameInRow="Requested" msprop:Generator_ColumnPropNameInTable="RequestedColumn" msprop:Generator_UserColumnName="Requested" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Issued" msprop:Generator_ColumnVarNameInTable="columnIssued" msprop:Generator_ColumnPropNameInRow="Issued" msprop:Generator_ColumnPropNameInTable="IssuedColumn" msprop:Generator_UserColumnName="Issued" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_UserColumnName="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalPrice" msprop:Generator_ColumnVarNameInTable="columnTotalPrice" msprop:Generator_ColumnPropNameInRow="TotalPrice" msprop:Generator_ColumnPropNameInTable="TotalPriceColumn" msprop:Generator_UserColumnName="TotalPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalTotalPrice" msprop:Generator_ColumnVarNameInTable="columnTotalTotalPrice" msprop:Generator_ColumnPropNameInRow="TotalTotalPrice" msprop:Generator_ColumnPropNameInTable="TotalTotalPriceColumn" msprop:Generator_UserColumnName="TotalTotalPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Approved_By" msprop:Generator_ColumnVarNameInTable="columnApproved_By" msprop:Generator_ColumnPropNameInRow="Approved_By" msprop:Generator_ColumnPropNameInTable="Approved_ByColumn" msprop:Generator_UserColumnName="Approved_By" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MainGroup" msprop:Generator_ColumnVarNameInTable="columnMainGroup" msprop:Generator_ColumnPropNameInRow="MainGroup" msprop:Generator_ColumnPropNameInTable="MainGroupColumn" msprop:Generator_UserColumnName="MainGroup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubGroup" msprop:Generator_ColumnVarNameInTable="columnSubGroup" msprop:Generator_ColumnPropNameInRow="SubGroup" msprop:Generator_ColumnPropNameInTable="SubGroupColumn" msprop:Generator_UserColumnName="SubGroup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

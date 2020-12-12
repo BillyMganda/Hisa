@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HisaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="LPO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Precision="0" />
+    <Property Name="OrderTime" Type="Time" Precision="7" />
+    <Property Name="OrderNumber" Type="Guid" Nullable="false" />
+    <Property Name="RefNumber" Type="Int32" />
+    <Property Name="RequestBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ExpectedDeliveryDate" Type="DateTime" Precision="0" />
+    <Property Name="SupplierName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PurchasingOfficer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ItemName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Units" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UnitPrice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SOH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Requested" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ToOrder" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Net" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TotalTotalAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="HisaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LPOes" EntityType="Self.LPO" />
+  </EntityContainer>
+</Schema>

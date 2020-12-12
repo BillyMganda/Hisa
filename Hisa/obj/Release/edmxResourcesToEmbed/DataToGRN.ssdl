@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HisaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LPO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="date" />
+    <Property Name="OrderTime" Type="time" Precision="7" />
+    <Property Name="OrderNumber" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RefNumber" Type="int" />
+    <Property Name="RequestBy" Type="varchar" MaxLength="50" />
+    <Property Name="ExpectedDeliveryDate" Type="date" />
+    <Property Name="SupplierName" Type="varchar" MaxLength="250" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="Telephone" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="PurchasingOfficer" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentMode" Type="varchar" MaxLength="50" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" />
+    <Property Name="Units" Type="varchar" MaxLength="50" />
+    <Property Name="UnitPrice" Type="varchar" MaxLength="50" />
+    <Property Name="SOH" Type="varchar" MaxLength="50" />
+    <Property Name="Requested" Type="varchar" MaxLength="50" />
+    <Property Name="ToOrder" Type="varchar" MaxLength="50" />
+    <Property Name="VAT" Type="varchar" MaxLength="50" />
+    <Property Name="Net" Type="varchar" MaxLength="50" />
+    <Property Name="TotalAmount" Type="varchar" MaxLength="50" />
+    <Property Name="TotalTotalAmount" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="HisaModelStoreContainer">
+    <EntitySet Name="LPO" EntityType="Self.LPO" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

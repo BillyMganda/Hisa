@@ -1,0 +1,2736 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B84355D3-B067-4652-8BB9-E3142E2B13FC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hisa</RootNamespace>
+    <AssemblyName>Hisa</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>appicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Dapper, Version=1.50.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.5\lib\net451\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.1000.523\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts_Module.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounts_Module.Designer.cs">
+      <DependentUpon>Accounts_Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add Stock Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add Stock Items.Designer.cs">
+      <DependentUpon>Add Stock Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add User.Designer.cs">
+      <DependentUpon>Add User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Add_Supplier_Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Supplier_Info.Designer.cs">
+      <DependentUpon>Add_Supplier_Info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Approve Inventory Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Approve Inventory Items.Designer.cs">
+      <DependentUpon>Approve Inventory Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorize_Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorize_Item.Designer.cs">
+      <DependentUpon>Authorize_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorize_LPOs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorize_LPOs.Designer.cs">
+      <DependentUpon>Authorize_LPOs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorize_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorize_Request.Designer.cs">
+      <DependentUpon>Authorize_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookOverList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookOverList.Designer.cs">
+      <DependentUpon>BookOverList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BookShortList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BookShortList.Designer.cs">
+      <DependentUpon>BookShortList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book_Over.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book_Over.Designer.cs">
+      <DependentUpon>Book_Over.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book_Short.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Book_Short.Designer.cs">
+      <DependentUpon>Book_Short.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart.Designer.cs">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_IT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart_IT.Designer.cs">
+      <DependentUpon>Cart_IT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_Purchasing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart_Purchasing.Designer.cs">
+      <DependentUpon>Cart_Purchasing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cart_Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cart_Statistics.Designer.cs">
+      <DependentUpon>Cart_Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Change_Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change_Password.Designer.cs">
+      <DependentUpon>Change_Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Choose_Department.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choose_Department.Designer.cs">
+      <DependentUpon>Choose_Department.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Choose_Department_IT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choose_Department_IT.Designer.cs">
+      <DependentUpon>Choose_Department_IT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Choose_Department_Purchasing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choose_Department_Purchasing.Designer.cs">
+      <DependentUpon>Choose_Department_Purchasing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Choose_Department_Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Choose_Department_Statistics.Designer.cs">
+      <DependentUpon>Choose_Department_Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClosingStockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClosingStockControl.Designer.cs">
+      <DependentUpon>ClosingStockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionToDB.cs" />
+    <Compile Include="ConsumptionDepartmentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ConsumptionDepartmentControl.Designer.cs">
+      <DependentUpon>ConsumptionDepartmentControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Create Inventory Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Create Inventory Item.Designer.cs">
+      <DependentUpon>Create Inventory Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\crpt_GRN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpt_GRN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crpt_NewLPO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpt_NewLPO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\crpt_PurchaseReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpt_PurchaseReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_BookOverList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_BookOverList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_BookShortList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_BookShortList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_Book_Over.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Book_Over.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_Book_Short.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Book_Short.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_Closing_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Closing_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ConsumptionByDepartment.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ConsumptionByDepartment.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_DailyGRNSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_DailyGRNSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_DailyIssueSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_DailyIssueSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_DailyLPOSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_DailyLPOSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_IssueFromStore.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_IssueFromStore.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ItemConsumption.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ItemConsumption.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ItemDisposalList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ItemDisposalList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ItemHistory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ItemHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ItemPurchaseHistory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ItemPurchaseHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_Item_Disposal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_Item_Disposal.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_LPOReprint.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_LPOReprint.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_MainGroupConsumption.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_MainGroupConsumption.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_New_Stocks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_New_Stocks.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_OpeningStocks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_OpeningStocks.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_OpenLPO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_OpenLPO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_OverallConsumption.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_OverallConsumption.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_PhysicalStockCount.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_PhysicalStockCount.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_PurchaseMainGroup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_PurchaseMainGroup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_PurchasesBySupplier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_PurchasesBySupplier.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_PurchasesForSubGroup.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_PurchasesForSubGroup.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ReturnInList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ReturnInList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ReturnOutList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ReturnOutList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ReturnToStore.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ReturnToStore.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_ReturnToSupplier.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_ReturnToSupplier.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_StockOnHAnd.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_StockOnHAnd.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_StockSheet.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_StockSheet.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_StockVariance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_StockVariance.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_SubGroupConsumption.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_SubGroupConsumption.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_SupplierInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_SupplierInfo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_TotalPurchases.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_TotalPurchases.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\CrystalReport_VoidedLPO.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport_VoidedLPO.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\LPO_Report.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LPO_Report.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CrystalReports\rpt_Request.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_Request.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DailyGRNSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DailyGRNSummary.Designer.cs">
+      <DependentUpon>DailyGRNSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyIssueSummaryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DailyIssueSummaryControl.Designer.cs">
+      <DependentUpon>DailyIssueSummaryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyLPOSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DailyLPOSummary.Designer.cs">
+      <DependentUpon>DailyLPOSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetForRequests.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetForRequests.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_BookOverList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_BookOverList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_BookShortList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_BookShortList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Book_Over.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Book_Over.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Book_Short.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Book_Short.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_DailyGRNSummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_DailyGRNSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_DailyIssueSummary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_DailyIssueSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_DailyLPOSummaryView.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_DailyLPOSummaryView.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_GRN_Binding.cs">
+      <DependentUpon>DataSet_GRN_Binding.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_GRN_Binding.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_GRN_Binding.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_IssueFromStore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_IssueFromStore.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_IssueFromStoreStorekeeper.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_IssueFromStoreStorekeeper.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_ItemDisposalList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ItemDisposalList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_ItemHistory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ItemHistory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Item_Disposal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Item_Disposal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Manager_Approval_Request.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Manager_Approval_Request.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_New_LPO.cs">
+      <DependentUpon>DataSet_New_LPO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_New_LPO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_New_LPO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_New_Stocks.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_New_Stocks.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Opening_Closing_Stocks_Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Opening_Closing_Stocks_Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_OpenLPOs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_OpenLPOs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Physical_Stock_Count.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Physical_Stock_Count.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_PurchaseForGroup.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_PurchaseForGroup.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_PurchasesBySupplier.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_PurchasesBySupplier.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Reprint_LPO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Reprint_LPO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Request_StockItems.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Request_StockItems.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_ReturnInList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReturnInList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_ReturnOutList.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReturnOutList.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_ReturnToStore.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ReturnToStore.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_Return_To_Supplier.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_Return_To_Supplier.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_StockSheet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_StockSheet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_StockVariance.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_StockVariance.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_SupplierInfo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_SupplierInfo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_ToProcessedGRN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_ToProcessedGRN.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_TotalPurchases.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_TotalPurchases.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\DataSet_VoidedLPO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_VoidedLPO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\GRNDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GRNDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\LPODataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LPODataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\LPO_Report.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LPO_Report.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\New_Authorised_LPO_Dataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>New_Authorised_LPO_Dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\PurchaseRequestDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PurchaseRequestDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset\RequestDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RequestDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_For_LPO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_For_LPO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_LPO.cs">
+      <DependentUpon>DataSet_LPO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_LPO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_LPO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dataset_RequisitionsToManager.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dataset_RequisitionsToManager.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataToGRN.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataToGRN.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataToGRN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataToGRN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataToGRN.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataToGRN.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Delete User Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Delete User Account.Designer.cs">
+      <DependentUpon>Delete User Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Departmental Budget.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departmental Budget.Designer.cs">
+      <DependentUpon>Departmental Budget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentConsItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DepartmentConsItem.Designer.cs">
+      <DependentUpon>DepartmentConsItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentConsMain.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DepartmentConsMain.Designer.cs">
+      <DependentUpon>DepartmentConsMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepartmentConsSub.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DepartmentConsSub.Designer.cs">
+      <DependentUpon>DepartmentConsSub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRN.Designer.cs">
+      <DependentUpon>GRN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRN_Reprint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GRN_Reprint.Designer.cs">
+      <DependentUpon>GRN_Reprint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GRN_Search_LPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GRN_Search_LPO.Designer.cs">
+      <DependentUpon>GRN_Search_LPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HisaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HisaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HisaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HisaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HOD Module.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOD Module.Designer.cs">
+      <DependentUpon>HOD Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HOD_Approve_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HOD_Approve_Request.Designer.cs">
+      <DependentUpon>HOD_Approve_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Issue From Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Issue From Store.Designer.cs">
+      <DependentUpon>Issue From Store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IT Support.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IT Support.Designer.cs">
+      <DependentUpon>IT Support.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item Disposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item Disposal.Designer.cs">
+      <DependentUpon>Item Disposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item Purchase History.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Item Purchase History.Designer.cs">
+      <DependentUpon>Item Purchase History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDisposalList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemDisposalList.Designer.cs">
+      <DependentUpon>ItemDisposalList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItemHistoryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ItemHistoryControl.Designer.cs">
+      <DependentUpon>ItemHistoryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Load_Stock_Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Load_Stock_Items.Designer.cs">
+      <DependentUpon>Load_Stock_Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LPO.cs">
+      <DependentUpon>DataToGRN.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Main Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main Group.Designer.cs">
+      <DependentUpon>Main Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Managers Module.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Managers Module.Designer.cs">
+      <DependentUpon>Managers Module.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Approve_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_Approve_Request.Designer.cs">
+      <DependentUpon>Manager_Approve_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Book_Over.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_Book_Over.Designer.cs">
+      <DependentUpon>Manager_Book_Over.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Book_Short.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_Book_Short.Designer.cs">
+      <DependentUpon>Manager_Book_Short.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_LPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_LPO.Designer.cs">
+      <DependentUpon>Manager_LPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_ReturnToStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_ReturnToStore.Designer.cs">
+      <DependentUpon>Manager_ReturnToStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager_Stock_Adjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager_Stock_Adjustment.Designer.cs">
+      <DependentUpon>Manager_Stock_Adjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model_Item_Inventory.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_Item_Inventory.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_Item_Inventory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_Item_Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model_Item_Inventory.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model_Item_Inventory.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="New_LPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New_LPO.Designer.cs">
+      <DependentUpon>New_LPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpeningStockControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OpeningStockControl.Designer.cs">
+      <DependentUpon>OpeningStockControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenLPOs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OpenLPOs.Designer.cs">
+      <DependentUpon>OpenLPOs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverallConsumptionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OverallConsumptionControl.Designer.cs">
+      <DependentUpon>OverallConsumptionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pending Requests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pending Requests.Designer.cs">
+      <DependentUpon>Pending Requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhysicalStocksControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhysicalStocksControl.Designer.cs">
+      <DependentUpon>PhysicalStocksControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrintPurchaseRequests.cs" />
+    <Compile Include="Print_Book_Over.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Book_Over.Designer.cs">
+      <DependentUpon>Print_Book_Over.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_Book_Short.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Book_Short.Designer.cs">
+      <DependentUpon>Print_Book_Short.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_Item_Disposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Item_Disposal.Designer.cs">
+      <DependentUpon>Print_Item_Disposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_Purchase_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Purchase_Request.Designer.cs">
+      <DependentUpon>Print_Purchase_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_Return_To_Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Return_To_Store.Designer.cs">
+      <DependentUpon>Print_Return_To_Store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Print_Return_To_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Print_Return_To_Supplier.Designer.cs">
+      <DependentUpon>Print_Return_To_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Processed_GRN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Processed_GRN.Designer.cs">
+      <DependentUpon>Processed_GRN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase Order.Designer.cs">
+      <DependentUpon>Purchase Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseBySupplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseBySupplier.Designer.cs">
+      <DependentUpon>PurchaseBySupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseMainGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseMainGroup.Designer.cs">
+      <DependentUpon>PurchaseMainGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PurchaseRequestDetails.cs" />
+    <Compile Include="PurchaseSubGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseSubGroup.Designer.cs">
+      <DependentUpon>PurchaseSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase_Request.Designer.cs">
+      <DependentUpon>Purchase_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing.Designer.cs">
+      <DependentUpon>Purchasing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchasing_Print_LPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchasing_Print_LPO.Designer.cs">
+      <DependentUpon>Purchasing_Print_LPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrystalReports\crpt_SupplierList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crpt_SupplierList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report_SupplierList1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Report_SupplierList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReprintItemDisposal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReprintItemDisposal.Designer.cs">
+      <DependentUpon>ReprintItemDisposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReprintReturnToSupplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReprintReturnToSupplier.Designer.cs">
+      <DependentUpon>ReprintReturnToSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reprint_Issue_Note.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reprint_Issue_Note.Designer.cs">
+      <DependentUpon>Reprint_Issue_Note.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_Enter_New_Stocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_Enter_New_Stocks.Designer.cs">
+      <DependentUpon>To_Enter_New_Stocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ItemHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ItemHistory.Designer.cs">
+      <DependentUpon>To_ItemHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ProcessedGRN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ProcessedGRN.Designer.cs">
+      <DependentUpon>To_ProcessedGRN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ReprintGRN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ReprintGRN.Designer.cs">
+      <DependentUpon>To_ReprintGRN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reprint_LPO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reprint_LPO.Designer.cs">
+      <DependentUpon>Reprint_LPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Request For Purchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Request For Purchase.Designer.cs">
+      <DependentUpon>Request For Purchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Requisitions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Requisitions.Designer.cs">
+      <DependentUpon>Requisitions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Return To Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Return To Supplier.Designer.cs">
+      <DependentUpon>Return To Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnInList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReturnInList.Designer.cs">
+      <DependentUpon>ReturnInList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnOutList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReturnOutList.Designer.cs">
+      <DependentUpon>ReturnOutList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnToStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnToStore.Designer.cs">
+      <DependentUpon>ReturnToStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Splash Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Splash Screen.Designer.cs">
+      <DependentUpon>Splash Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Statistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Statistics.Designer.cs">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Adjustment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock Adjustment.Designer.cs">
+      <DependentUpon>Stock Adjustment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Count.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock Count.Designer.cs">
+      <DependentUpon>Stock Count.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stock Items.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stock Items.Designer.cs">
+      <DependentUpon>Stock Items.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockItem.cs">
+      <DependentUpon>Model_Item_Inventory.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StockOnHandControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StockOnHandControl.Designer.cs">
+      <DependentUpon>StockOnHandControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StocksheetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StocksheetControl.Designer.cs">
+      <DependentUpon>StocksheetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockVariance.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StockVariance.Designer.cs">
+      <DependentUpon>StockVariance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storekeeper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storekeeper.Designer.cs">
+      <DependentUpon>Storekeeper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storekeeper_Disposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storekeeper_Disposal.Designer.cs">
+      <DependentUpon>Storekeeper_Disposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storekeeper_ReturnToSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storekeeper_ReturnToSupplier.Designer.cs">
+      <DependentUpon>Storekeeper_ReturnToSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sub Group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sub Group.Designer.cs">
+      <DependentUpon>Sub Group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SupplierList.Designer.cs">
+      <DependentUpon>SupplierList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToCheckOut.Designer.cs">
+      <DependentUpon>ToCheckOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToGRN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToGRN.Designer.cs">
+      <DependentUpon>ToGRN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_BookOverList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_BookOverList.Designer.cs">
+      <DependentUpon>To_BookOverList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_BookShort.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_BookShort.Designer.cs">
+      <DependentUpon>To_BookShort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_BookShortList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_BookShortList.Designer.cs">
+      <DependentUpon>To_BookShortList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ClosingStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ClosingStocks.Designer.cs">
+      <DependentUpon>To_ClosingStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ConsumptionPerDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ConsumptionPerDepartment.Designer.cs">
+      <DependentUpon>To_ConsumptionPerDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_DailyGRNSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_DailyGRNSummary.Designer.cs">
+      <DependentUpon>To_DailyGRNSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_DailyIssueSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_DailyIssueSummary.Designer.cs">
+      <DependentUpon>To_DailyIssueSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_DailyLPOSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_DailyLPOSummary.Designer.cs">
+      <DependentUpon>To_DailyLPOSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_DepartmentConsumptionItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_DepartmentConsumptionItem.Designer.cs">
+      <DependentUpon>To_DepartmentConsumptionItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_DepartmentConsumptionMainGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_DepartmentConsumptionMainGroup.Designer.cs">
+      <DependentUpon>To_DepartmentConsumptionMainGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_DepartmentConsumptionSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_DepartmentConsumptionSubGroup.Designer.cs">
+      <DependentUpon>To_DepartmentConsumptionSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ItemDisposalList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ItemDisposalList.Designer.cs">
+      <DependentUpon>To_ItemDisposalList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ItemPurchaseHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ItemPurchaseHistory.Designer.cs">
+      <DependentUpon>To_ItemPurchaseHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_LPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_LPO.Designer.cs">
+      <DependentUpon>To_LPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ToPurchase_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ToPurchase_Request.Designer.cs">
+      <DependentUpon>ToPurchase_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TotalPurchases.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TotalPurchases.Designer.cs">
+      <DependentUpon>TotalPurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_BookOver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_BookOver.Designer.cs">
+      <DependentUpon>To_BookOver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_Issue_From_Store.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_Issue_From_Store.Designer.cs">
+      <DependentUpon>To_Issue_From_Store.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_Item_Disposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_Item_Disposal.Designer.cs">
+      <DependentUpon>To_Item_Disposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_New_LPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_New_LPO.Designer.cs">
+      <DependentUpon>To_New_LPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_OpeningStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_OpeningStock.Designer.cs">
+      <DependentUpon>To_OpeningStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_OpenLPOs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_OpenLPOs.Designer.cs">
+      <DependentUpon>To_OpenLPOs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_OverallConsumption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_OverallConsumption.Designer.cs">
+      <DependentUpon>To_OverallConsumption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_PhysicalStockCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_PhysicalStockCount.Designer.cs">
+      <DependentUpon>To_PhysicalStockCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_PhysicalStocsCount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_PhysicalStocsCount.Designer.cs">
+      <DependentUpon>To_PhysicalStocsCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_PurchaseForSubGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_PurchaseForSubGroup.Designer.cs">
+      <DependentUpon>To_PurchaseForSubGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_PurchaseForSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_PurchaseForSupplier.Designer.cs">
+      <DependentUpon>To_PurchaseForSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_PurchasesForMainGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_PurchasesForMainGroup.Designer.cs">
+      <DependentUpon>To_PurchasesForMainGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ReprintItemDisposal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ReprintItemDisposal.Designer.cs">
+      <DependentUpon>To_ReprintItemDisposal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ReprintLPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ReprintLPO.Designer.cs">
+      <DependentUpon>To_ReprintLPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_Reprint_Issue_Note.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_Reprint_Issue_Note.Designer.cs">
+      <DependentUpon>To_Reprint_Issue_Note.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ReturnInList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ReturnInList.Designer.cs">
+      <DependentUpon>To_ReturnInList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ReturnOutList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ReturnOutList.Designer.cs">
+      <DependentUpon>To_ReturnOutList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ReturnToStore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ReturnToStore.Designer.cs">
+      <DependentUpon>To_ReturnToStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ReturnToSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ReturnToSupplier.Designer.cs">
+      <DependentUpon>To_ReturnToSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_ReturnToSupplierReprint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_ReturnToSupplierReprint.Designer.cs">
+      <DependentUpon>To_ReturnToSupplierReprint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_Return_To_Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_Return_To_Supplier.Designer.cs">
+      <DependentUpon>To_Return_To_Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_StockOnHand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_StockOnHand.Designer.cs">
+      <DependentUpon>To_StockOnHand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_StockSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_StockSheet.Designer.cs">
+      <DependentUpon>To_StockSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_StockVariance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_StockVariance.Designer.cs">
+      <DependentUpon>To_StockVariance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_SupplierList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_SupplierList.Designer.cs">
+      <DependentUpon>To_SupplierList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_TotalPurchases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_TotalPurchases.Designer.cs">
+      <DependentUpon>To_TotalPurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="To_VoidedLPO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="To_VoidedLPO.Designer.cs">
+      <DependentUpon>To_VoidedLPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VoidLPOs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VoidLPOs.Designer.cs">
+      <DependentUpon>VoidLPOs.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Accounts_Module.resx">
+      <DependentUpon>Accounts_Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add Stock Items.resx">
+      <DependentUpon>Add Stock Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add User.resx">
+      <DependentUpon>Add User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Add_Supplier_Info.resx">
+      <DependentUpon>Add_Supplier_Info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Approve Inventory Items.resx">
+      <DependentUpon>Approve Inventory Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorize_Item.resx">
+      <DependentUpon>Authorize_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorize_LPOs.resx">
+      <DependentUpon>Authorize_LPOs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authorize_Request.resx">
+      <DependentUpon>Authorize_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookOverList.resx">
+      <DependentUpon>BookOverList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookShortList.resx">
+      <DependentUpon>BookShortList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book_Over.resx">
+      <DependentUpon>Book_Over.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Book_Short.resx">
+      <DependentUpon>Book_Short.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart.resx">
+      <DependentUpon>Cart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart_IT.resx">
+      <DependentUpon>Cart_IT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart_Purchasing.resx">
+      <DependentUpon>Cart_Purchasing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cart_Statistics.resx">
+      <DependentUpon>Cart_Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Change_Password.resx">
+      <DependentUpon>Change_Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Choose_Department.resx">
+      <DependentUpon>Choose_Department.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Choose_Department_IT.resx">
+      <DependentUpon>Choose_Department_IT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Choose_Department_Purchasing.resx">
+      <DependentUpon>Choose_Department_Purchasing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Choose_Department_Statistics.resx">
+      <DependentUpon>Choose_Department_Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClosingStockControl.resx">
+      <DependentUpon>ClosingStockControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsumptionDepartmentControl.resx">
+      <DependentUpon>ConsumptionDepartmentControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Create Inventory Item.resx">
+      <DependentUpon>Create Inventory Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crpt_GRN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpt_GRN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crpt_NewLPO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpt_NewLPO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crpt_PurchaseReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpt_PurchaseReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_BookOverList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_BookOverList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_BookShortList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_BookShortList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_Book_Over.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Book_Over.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_Book_Short.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Book_Short.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_Closing_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Closing_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ConsumptionByDepartment.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ConsumptionByDepartment.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_DailyGRNSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_DailyGRNSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_DailyIssueSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_DailyIssueSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_DailyLPOSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_DailyLPOSummary.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_IssueFromStore.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_IssueFromStore.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ItemConsumption.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ItemConsumption.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ItemDisposalList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ItemDisposalList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ItemHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ItemHistory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ItemPurchaseHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ItemPurchaseHistory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_Item_Disposal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_Item_Disposal.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_LPOReprint.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_LPOReprint.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_MainGroupConsumption.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_MainGroupConsumption.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_New_Stocks.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_New_Stocks.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_OpeningStocks.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_OpeningStocks.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_OpenLPO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_OpenLPO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_OverallConsumption.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_OverallConsumption.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_PhysicalStockCount.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_PhysicalStockCount.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_PurchaseMainGroup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_PurchaseMainGroup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_PurchasesBySupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_PurchasesBySupplier.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_PurchasesForSubGroup.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_PurchasesForSubGroup.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ReturnInList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ReturnInList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ReturnOutList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ReturnOutList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ReturnToStore.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ReturnToStore.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_ReturnToSupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_ReturnToSupplier.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_StockOnHAnd.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_StockOnHAnd.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_StockSheet.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_StockSheet.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_StockVariance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_StockVariance.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_SubGroupConsumption.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_SubGroupConsumption.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_SupplierInfo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_SupplierInfo.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_TotalPurchases.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_TotalPurchases.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\CrystalReport_VoidedLPO.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport_VoidedLPO.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\LPO_Report.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LPO_Report.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\rpt_Request.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_Request.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyGRNSummary.resx">
+      <DependentUpon>DailyGRNSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyIssueSummaryControl.resx">
+      <DependentUpon>DailyIssueSummaryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyLPOSummary.resx">
+      <DependentUpon>DailyLPOSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Delete User Account.resx">
+      <DependentUpon>Delete User Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Departmental Budget.resx">
+      <DependentUpon>Departmental Budget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentConsItem.resx">
+      <DependentUpon>DepartmentConsItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentConsMain.resx">
+      <DependentUpon>DepartmentConsMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepartmentConsSub.resx">
+      <DependentUpon>DepartmentConsSub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRN.resx">
+      <DependentUpon>GRN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRN_Reprint.resx">
+      <DependentUpon>GRN_Reprint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GRN_Search_LPO.resx">
+      <DependentUpon>GRN_Search_LPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOD Module.resx">
+      <DependentUpon>HOD Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HOD_Approve_Request.resx">
+      <DependentUpon>HOD_Approve_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Issue From Store.resx">
+      <DependentUpon>Issue From Store.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IT Support.resx">
+      <DependentUpon>IT Support.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item Disposal.resx">
+      <DependentUpon>Item Disposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item Purchase History.resx">
+      <DependentUpon>Item Purchase History.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemDisposalList.resx">
+      <DependentUpon>ItemDisposalList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemHistoryControl.resx">
+      <DependentUpon>ItemHistoryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Load_Stock_Items.resx">
+      <DependentUpon>Load_Stock_Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main Group.resx">
+      <DependentUpon>Main Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Managers Module.resx">
+      <DependentUpon>Managers Module.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_Approve_Request.resx">
+      <DependentUpon>Manager_Approve_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_Book_Over.resx">
+      <DependentUpon>Manager_Book_Over.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_Book_Short.resx">
+      <DependentUpon>Manager_Book_Short.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_LPO.resx">
+      <DependentUpon>Manager_LPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_ReturnToStore.resx">
+      <DependentUpon>Manager_ReturnToStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager_Stock_Adjustment.resx">
+      <DependentUpon>Manager_Stock_Adjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New_LPO.resx">
+      <DependentUpon>New_LPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpeningStockControl.resx">
+      <DependentUpon>OpeningStockControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenLPOs.resx">
+      <DependentUpon>OpenLPOs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverallConsumptionControl.resx">
+      <DependentUpon>OverallConsumptionControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pending Requests.resx">
+      <DependentUpon>Pending Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhysicalStocksControl.resx">
+      <DependentUpon>PhysicalStocksControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Book_Over.resx">
+      <DependentUpon>Print_Book_Over.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Book_Short.resx">
+      <DependentUpon>Print_Book_Short.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Item_Disposal.resx">
+      <DependentUpon>Print_Item_Disposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Purchase_Request.resx">
+      <DependentUpon>Print_Purchase_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Return_To_Store.resx">
+      <DependentUpon>Print_Return_To_Store.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Print_Return_To_Supplier.resx">
+      <DependentUpon>Print_Return_To_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Processed_GRN.resx">
+      <DependentUpon>Processed_GRN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Purchase Order.resx">
+      <DependentUpon>Purchase Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseBySupplier.resx">
+      <DependentUpon>PurchaseBySupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseMainGroup.resx">
+      <DependentUpon>PurchaseMainGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PurchaseSubGroup.resx">
+      <DependentUpon>PurchaseSubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase_Request.resx">
+      <DependentUpon>Purchase_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing.resx">
+      <DependentUpon>Purchasing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchasing_Print_LPO.resx">
+      <DependentUpon>Purchasing_Print_LPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReports\crpt_SupplierList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crpt_SupplierList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report_SupplierList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Report_SupplierList1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprintItemDisposal.resx">
+      <DependentUpon>ReprintItemDisposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReprintReturnToSupplier.resx">
+      <DependentUpon>ReprintReturnToSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reprint_Issue_Note.resx">
+      <DependentUpon>Reprint_Issue_Note.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_Enter_New_Stocks.resx">
+      <DependentUpon>To_Enter_New_Stocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ItemHistory.resx">
+      <DependentUpon>To_ItemHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ProcessedGRN.resx">
+      <DependentUpon>To_ProcessedGRN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ReprintGRN.resx">
+      <DependentUpon>To_ReprintGRN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reprint_LPO.resx">
+      <DependentUpon>Reprint_LPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Request For Purchase.resx">
+      <DependentUpon>Request For Purchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Requisitions.resx">
+      <DependentUpon>Requisitions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return To Supplier.resx">
+      <DependentUpon>Return To Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnInList.resx">
+      <DependentUpon>ReturnInList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnOutList.resx">
+      <DependentUpon>ReturnOutList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReturnToStore.resx">
+      <DependentUpon>ReturnToStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Splash Screen.resx">
+      <DependentUpon>Splash Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statistics.resx">
+      <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock Adjustment.resx">
+      <DependentUpon>Stock Adjustment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock Count.resx">
+      <DependentUpon>Stock Count.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stock Items.resx">
+      <DependentUpon>Stock Items.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockOnHandControl.resx">
+      <DependentUpon>StockOnHandControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StocksheetControl.resx">
+      <DependentUpon>StocksheetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockVariance.resx">
+      <DependentUpon>StockVariance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storekeeper.resx">
+      <DependentUpon>Storekeeper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storekeeper_Disposal.resx">
+      <DependentUpon>Storekeeper_Disposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storekeeper_ReturnToSupplier.resx">
+      <DependentUpon>Storekeeper_ReturnToSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sub Group.resx">
+      <DependentUpon>Sub Group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupplierList.resx">
+      <DependentUpon>SupplierList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToCheckOut.resx">
+      <DependentUpon>ToCheckOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToGRN.resx">
+      <DependentUpon>ToGRN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_BookOverList.resx">
+      <DependentUpon>To_BookOverList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_BookShort.resx">
+      <DependentUpon>To_BookShort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_BookShortList.resx">
+      <DependentUpon>To_BookShortList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ClosingStocks.resx">
+      <DependentUpon>To_ClosingStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ConsumptionPerDepartment.resx">
+      <DependentUpon>To_ConsumptionPerDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_DailyGRNSummary.resx">
+      <DependentUpon>To_DailyGRNSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_DailyIssueSummary.resx">
+      <DependentUpon>To_DailyIssueSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_DailyLPOSummary.resx">
+      <DependentUpon>To_DailyLPOSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_DepartmentConsumptionItem.resx">
+      <DependentUpon>To_DepartmentConsumptionItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_DepartmentConsumptionMainGroup.resx">
+      <DependentUpon>To_DepartmentConsumptionMainGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_DepartmentConsumptionSubGroup.resx">
+      <DependentUpon>To_DepartmentConsumptionSubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ItemDisposalList.resx">
+      <DependentUpon>To_ItemDisposalList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ItemPurchaseHistory.resx">
+      <DependentUpon>To_ItemPurchaseHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_LPO.resx">
+      <DependentUpon>To_LPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToPurchase_Request.resx">
+      <DependentUpon>ToPurchase_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalPurchases.resx">
+      <DependentUpon>TotalPurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_BookOver.resx">
+      <DependentUpon>To_BookOver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_Issue_From_Store.resx">
+      <DependentUpon>To_Issue_From_Store.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_Item_Disposal.resx">
+      <DependentUpon>To_Item_Disposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_New_LPO.resx">
+      <DependentUpon>To_New_LPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_OpeningStock.resx">
+      <DependentUpon>To_OpeningStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_OpenLPOs.resx">
+      <DependentUpon>To_OpenLPOs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_OverallConsumption.resx">
+      <DependentUpon>To_OverallConsumption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_PhysicalStockCount.resx">
+      <DependentUpon>To_PhysicalStockCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_PhysicalStocsCount.resx">
+      <DependentUpon>To_PhysicalStocsCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_PurchaseForSubGroup.resx">
+      <DependentUpon>To_PurchaseForSubGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_PurchaseForSupplier.resx">
+      <DependentUpon>To_PurchaseForSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_PurchasesForMainGroup.resx">
+      <DependentUpon>To_PurchasesForMainGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ReprintItemDisposal.resx">
+      <DependentUpon>To_ReprintItemDisposal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ReprintLPO.resx">
+      <DependentUpon>To_ReprintLPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_Reprint_Issue_Note.resx">
+      <DependentUpon>To_Reprint_Issue_Note.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ReturnInList.resx">
+      <DependentUpon>To_ReturnInList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ReturnOutList.resx">
+      <DependentUpon>To_ReturnOutList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ReturnToStore.resx">
+      <DependentUpon>To_ReturnToStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ReturnToSupplier.resx">
+      <DependentUpon>To_ReturnToSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_ReturnToSupplierReprint.resx">
+      <DependentUpon>To_ReturnToSupplierReprint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_Return_To_Supplier.resx">
+      <DependentUpon>To_Return_To_Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_StockOnHand.resx">
+      <DependentUpon>To_StockOnHand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_StockSheet.resx">
+      <DependentUpon>To_StockSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_StockVariance.resx">
+      <DependentUpon>To_StockVariance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_SupplierList.resx">
+      <DependentUpon>To_SupplierList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_TotalPurchases.resx">
+      <DependentUpon>To_TotalPurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="To_VoidedLPO.resx">
+      <DependentUpon>To_VoidedLPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VoidLPOs.resx">
+      <DependentUpon>VoidLPOs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DataToGRN.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataToGRN.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DataSetForRequests.xsc">
+      <DependentUpon>DataSetForRequests.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetForRequests.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetForRequests.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetForRequests.xss">
+      <DependentUpon>DataSetForRequests.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_BookOverList.xsc">
+      <DependentUpon>DataSet_BookOverList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_BookOverList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_BookOverList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_BookOverList.xss">
+      <DependentUpon>DataSet_BookOverList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_BookShortList.xsc">
+      <DependentUpon>DataSet_BookShortList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_BookShortList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_BookShortList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_BookShortList.xss">
+      <DependentUpon>DataSet_BookShortList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Book_Over.xsc">
+      <DependentUpon>DataSet_Book_Over.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Book_Over.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Book_Over.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Book_Over.xss">
+      <DependentUpon>DataSet_Book_Over.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Book_Short.xsc">
+      <DependentUpon>DataSet_Book_Short.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Book_Short.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Book_Short.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Book_Short.xss">
+      <DependentUpon>DataSet_Book_Short.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_DailyGRNSummary.xsc">
+      <DependentUpon>DataSet_DailyGRNSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_DailyGRNSummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_DailyGRNSummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_DailyGRNSummary.xss">
+      <DependentUpon>DataSet_DailyGRNSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_DailyIssueSummary.xsc">
+      <DependentUpon>DataSet_DailyIssueSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_DailyIssueSummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_DailyIssueSummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_DailyIssueSummary.xss">
+      <DependentUpon>DataSet_DailyIssueSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_DailyLPOSummaryView.xsc">
+      <DependentUpon>DataSet_DailyLPOSummaryView.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_DailyLPOSummaryView.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_DailyLPOSummaryView.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_DailyLPOSummaryView.xss">
+      <DependentUpon>DataSet_DailyLPOSummaryView.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_GRN_Binding.xsc">
+      <DependentUpon>DataSet_GRN_Binding.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_GRN_Binding.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_GRN_Binding.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_GRN_Binding.xss">
+      <DependentUpon>DataSet_GRN_Binding.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_IssueFromStore.xsc">
+      <DependentUpon>DataSet_IssueFromStore.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_IssueFromStore.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_IssueFromStore.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_IssueFromStore.xss">
+      <DependentUpon>DataSet_IssueFromStore.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_IssueFromStoreStorekeeper.xsc">
+      <DependentUpon>DataSet_IssueFromStoreStorekeeper.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_IssueFromStoreStorekeeper.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_IssueFromStoreStorekeeper.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_IssueFromStoreStorekeeper.xss">
+      <DependentUpon>DataSet_IssueFromStoreStorekeeper.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ItemDisposalList.xsc">
+      <DependentUpon>DataSet_ItemDisposalList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ItemDisposalList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ItemDisposalList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_ItemDisposalList.xss">
+      <DependentUpon>DataSet_ItemDisposalList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ItemHistory.xsc">
+      <DependentUpon>DataSet_ItemHistory.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ItemHistory.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ItemHistory.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_ItemHistory.xss">
+      <DependentUpon>DataSet_ItemHistory.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Item_Disposal.xsc">
+      <DependentUpon>DataSet_Item_Disposal.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Item_Disposal.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Item_Disposal.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Item_Disposal.xss">
+      <DependentUpon>DataSet_Item_Disposal.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Manager_Approval_Request.xsc">
+      <DependentUpon>DataSet_Manager_Approval_Request.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Manager_Approval_Request.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Manager_Approval_Request.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Manager_Approval_Request.xss">
+      <DependentUpon>DataSet_Manager_Approval_Request.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_New_LPO.xsc">
+      <DependentUpon>DataSet_New_LPO.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_New_LPO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_New_LPO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_New_LPO.xss">
+      <DependentUpon>DataSet_New_LPO.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_New_Stocks.xsc">
+      <DependentUpon>DataSet_New_Stocks.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_New_Stocks.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_New_Stocks.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_New_Stocks.xss">
+      <DependentUpon>DataSet_New_Stocks.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Opening_Closing_Stocks_Report.xsc">
+      <DependentUpon>DataSet_Opening_Closing_Stocks_Report.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Opening_Closing_Stocks_Report.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Opening_Closing_Stocks_Report.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Opening_Closing_Stocks_Report.xss">
+      <DependentUpon>DataSet_Opening_Closing_Stocks_Report.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_OpenLPOs.xsc">
+      <DependentUpon>DataSet_OpenLPOs.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_OpenLPOs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_OpenLPOs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_OpenLPOs.xss">
+      <DependentUpon>DataSet_OpenLPOs.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Physical_Stock_Count.xsc">
+      <DependentUpon>DataSet_Physical_Stock_Count.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Physical_Stock_Count.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Physical_Stock_Count.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Physical_Stock_Count.xss">
+      <DependentUpon>DataSet_Physical_Stock_Count.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_PurchaseForGroup.xsc">
+      <DependentUpon>DataSet_PurchaseForGroup.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_PurchaseForGroup.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_PurchaseForGroup.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_PurchaseForGroup.xss">
+      <DependentUpon>DataSet_PurchaseForGroup.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_PurchasesBySupplier.xsc">
+      <DependentUpon>DataSet_PurchasesBySupplier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_PurchasesBySupplier.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_PurchasesBySupplier.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_PurchasesBySupplier.xss">
+      <DependentUpon>DataSet_PurchasesBySupplier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Reprint_LPO.xsc">
+      <DependentUpon>DataSet_Reprint_LPO.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Reprint_LPO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Reprint_LPO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Reprint_LPO.xss">
+      <DependentUpon>DataSet_Reprint_LPO.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Request_StockItems.xsc">
+      <DependentUpon>DataSet_Request_StockItems.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Request_StockItems.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Request_StockItems.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Request_StockItems.xss">
+      <DependentUpon>DataSet_Request_StockItems.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ReturnInList.xsc">
+      <DependentUpon>DataSet_ReturnInList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ReturnInList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReturnInList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_ReturnInList.xss">
+      <DependentUpon>DataSet_ReturnInList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ReturnOutList.xsc">
+      <DependentUpon>DataSet_ReturnOutList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ReturnOutList.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReturnOutList.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_ReturnOutList.xss">
+      <DependentUpon>DataSet_ReturnOutList.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ReturnToStore.xsc">
+      <DependentUpon>DataSet_ReturnToStore.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ReturnToStore.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ReturnToStore.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_ReturnToStore.xss">
+      <DependentUpon>DataSet_ReturnToStore.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Return_To_Supplier.xsc">
+      <DependentUpon>DataSet_Return_To_Supplier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_Return_To_Supplier.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_Return_To_Supplier.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_Return_To_Supplier.xss">
+      <DependentUpon>DataSet_Return_To_Supplier.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_StockSheet.xsc">
+      <DependentUpon>DataSet_StockSheet.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_StockSheet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_StockSheet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_StockSheet.xss">
+      <DependentUpon>DataSet_StockSheet.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_StockVariance.xsc">
+      <DependentUpon>DataSet_StockVariance.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_StockVariance.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_StockVariance.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_StockVariance.xss">
+      <DependentUpon>DataSet_StockVariance.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_SupplierInfo.xsc">
+      <DependentUpon>DataSet_SupplierInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_SupplierInfo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_SupplierInfo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_SupplierInfo.xss">
+      <DependentUpon>DataSet_SupplierInfo.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ToProcessedGRN.xsc">
+      <DependentUpon>DataSet_ToProcessedGRN.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_ToProcessedGRN.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_ToProcessedGRN.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_ToProcessedGRN.xss">
+      <DependentUpon>DataSet_ToProcessedGRN.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_TotalPurchases.xsc">
+      <DependentUpon>DataSet_TotalPurchases.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_TotalPurchases.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_TotalPurchases.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_TotalPurchases.xss">
+      <DependentUpon>DataSet_TotalPurchases.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_VoidedLPO.xsc">
+      <DependentUpon>DataSet_VoidedLPO.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\DataSet_VoidedLPO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_VoidedLPO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\DataSet_VoidedLPO.xss">
+      <DependentUpon>DataSet_VoidedLPO.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\GRNDataset.xsc">
+      <DependentUpon>GRNDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\GRNDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GRNDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\GRNDataset.xss">
+      <DependentUpon>GRNDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\LPODataset.xsc">
+      <DependentUpon>LPODataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\LPODataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LPODataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\LPODataset.xss">
+      <DependentUpon>LPODataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\LPO_Report.xsc">
+      <DependentUpon>LPO_Report.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\LPO_Report.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LPO_Report.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\LPO_Report.xss">
+      <DependentUpon>LPO_Report.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\New_Authorised_LPO_Dataset.xsc">
+      <DependentUpon>New_Authorised_LPO_Dataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\New_Authorised_LPO_Dataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>New_Authorised_LPO_Dataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\New_Authorised_LPO_Dataset.xss">
+      <DependentUpon>New_Authorised_LPO_Dataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\PurchaseRequestDataSet.xsc">
+      <DependentUpon>PurchaseRequestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\PurchaseRequestDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PurchaseRequestDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\PurchaseRequestDataSet.xss">
+      <DependentUpon>PurchaseRequestDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\RequestDataset.xsc">
+      <DependentUpon>RequestDataset.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset\RequestDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RequestDataset.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dataset\RequestDataset.xss">
+      <DependentUpon>RequestDataset.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_For_LPO.xsc">
+      <DependentUpon>DataSet_For_LPO.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_For_LPO.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_For_LPO.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet_For_LPO.xss">
+      <DependentUpon>DataSet_For_LPO.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_LPO.xsc">
+      <DependentUpon>DataSet_LPO.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_LPO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_LPO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet_LPO.xss">
+      <DependentUpon>DataSet_LPO.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_RequisitionsToManager.xsc">
+      <DependentUpon>Dataset_RequisitionsToManager.xsd</DependentUpon>
+    </None>
+    <None Include="Dataset_RequisitionsToManager.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dataset_RequisitionsToManager.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dataset_RequisitionsToManager.xss">
+      <DependentUpon>Dataset_RequisitionsToManager.xsd</DependentUpon>
+    </None>
+    <None Include="DataToGRN.edmx.diagram">
+      <DependentUpon>DataToGRN.edmx</DependentUpon>
+    </None>
+    <None Include="HisaDataSet.xsc">
+      <DependentUpon>HisaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HisaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HisaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HisaDataSet.xss">
+      <DependentUpon>HisaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HisaDataSet1.xsc">
+      <DependentUpon>HisaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="HisaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HisaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HisaDataSet1.xss">
+      <DependentUpon>HisaDataSet1.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model_Item_Inventory.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model_Item_Inventory.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model_Item_Inventory.edmx.diagram">
+      <DependentUpon>Model_Item_Inventory.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\PrintPurchaseRequests.datasource" />
+    <None Include="Properties\DataSources\StockItem.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appicon.ico" />
+    <Content Include="DataToGRN.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DataToGRN.Context.cs</LastGenOutput>
+      <DependentUpon>DataToGRN.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataToGRN.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DataToGRN.edmx</DependentUpon>
+      <LastGenOutput>DataToGRN.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\close.png" />
+    <None Include="Resources\print.png" />
+    <None Include="Resources\print32.png" />
+    <Content Include="Model_Item_Inventory.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_Item_Inventory.edmx</DependentUpon>
+      <LastGenOutput>Model_Item_Inventory.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model_Item_Inventory.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model_Item_Inventory.edmx</DependentUpon>
+      <LastGenOutput>Model_Item_Inventory.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxCrystalActiveXReportViewerLib11">
+      <Guid>{FB992564-9055-42B5-B433-FEA84CEA93C4}</Guid>
+      <VersionMajor>11</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="CrystalActiveXReportViewerLib11">
+      <Guid>{FB992564-9055-42B5-B433-FEA84CEA93C4}</Guid>
+      <VersionMajor>11</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

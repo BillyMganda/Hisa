@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet_StockVariance" targetNamespace="http://tempuri.org/DataSet_StockVariance.xsd" xmlns:mstns="http://tempuri.org/DataSet_StockVariance.xsd" xmlns="http://tempuri.org/DataSet_StockVariance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="HisaConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HisaConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Hisa.Properties.Settings.GlobalReference.Default.HisaConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StockCount_Stores_VarianceREportTableAdapter" GeneratorDataComponentClassName="StockCount_Stores_VarianceREportTableAdapter" Name="StockCount_Stores_VarianceREport" UserDataComponentName="StockCount_Stores_VarianceREportTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HisaConnectionString1 (Settings)" DbObjectName="Hisa.dbo.StockCount_Stores_VarianceREport" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Date, Time, StockBy, RecordNumber, ItemName, ItemCode, Units, SubGroup, Stock, UnitPrice, StockValue, StoresItemName, StoresItemCode, StoresUnits, StoresPrice, StoresSOH, StoresStockValue FROM dbo.StockCount_Stores_VarianceREport</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Date" DataSetColumn="Date" />
+              <Mapping SourceColumn="Time" DataSetColumn="Time" />
+              <Mapping SourceColumn="StockBy" DataSetColumn="StockBy" />
+              <Mapping SourceColumn="RecordNumber" DataSetColumn="RecordNumber" />
+              <Mapping SourceColumn="ItemName" DataSetColumn="ItemName" />
+              <Mapping SourceColumn="ItemCode" DataSetColumn="ItemCode" />
+              <Mapping SourceColumn="Units" DataSetColumn="Units" />
+              <Mapping SourceColumn="SubGroup" DataSetColumn="SubGroup" />
+              <Mapping SourceColumn="Stock" DataSetColumn="Stock" />
+              <Mapping SourceColumn="UnitPrice" DataSetColumn="UnitPrice" />
+              <Mapping SourceColumn="StockValue" DataSetColumn="StockValue" />
+              <Mapping SourceColumn="StoresItemName" DataSetColumn="StoresItemName" />
+              <Mapping SourceColumn="StoresItemCode" DataSetColumn="StoresItemCode" />
+              <Mapping SourceColumn="StoresUnits" DataSetColumn="StoresUnits" />
+              <Mapping SourceColumn="StoresPrice" DataSetColumn="StoresPrice" />
+              <Mapping SourceColumn="StoresSOH" DataSetColumn="StoresSOH" />
+              <Mapping SourceColumn="StoresStockValue" DataSetColumn="StoresStockValue" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet_StockVariance" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_StockVariance" msprop:Generator_UserDSName="DataSet_StockVariance">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StockCount_Stores_VarianceREport" msprop:Generator_TableClassName="StockCount_Stores_VarianceREportDataTable" msprop:Generator_TableVarName="tableStockCount_Stores_VarianceREport" msprop:Generator_TablePropName="StockCount_Stores_VarianceREport" msprop:Generator_RowDeletingName="StockCount_Stores_VarianceREportRowDeleting" msprop:Generator_RowChangingName="StockCount_Stores_VarianceREportRowChanging" msprop:Generator_RowEvHandlerName="StockCount_Stores_VarianceREportRowChangeEventHandler" msprop:Generator_RowDeletedName="StockCount_Stores_VarianceREportRowDeleted" msprop:Generator_UserTableName="StockCount_Stores_VarianceREport" msprop:Generator_RowChangedName="StockCount_Stores_VarianceREportRowChanged" msprop:Generator_RowEvArgName="StockCount_Stores_VarianceREportRowChangeEvent" msprop:Generator_RowClassName="StockCount_Stores_VarianceREportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Time" msprop:Generator_ColumnVarNameInTable="columnTime" msprop:Generator_ColumnPropNameInRow="Time" msprop:Generator_ColumnPropNameInTable="TimeColumn" msprop:Generator_UserColumnName="Time" type="xs:duration" minOccurs="0" />
+              <xs:element name="StockBy" msprop:Generator_ColumnVarNameInTable="columnStockBy" msprop:Generator_ColumnPropNameInRow="StockBy" msprop:Generator_ColumnPropNameInTable="StockByColumn" msprop:Generator_UserColumnName="StockBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RecordNumber" msprop:Generator_ColumnVarNameInTable="columnRecordNumber" msprop:Generator_ColumnPropNameInRow="RecordNumber" msprop:Generator_ColumnPropNameInTable="RecordNumberColumn" msprop:Generator_UserColumnName="RecordNumber" type="xs:int" minOccurs="0" />
+              <xs:element name="ItemName" msprop:Generator_ColumnVarNameInTable="columnItemName" msprop:Generator_ColumnPropNameInRow="ItemName" msprop:Generator_ColumnPropNameInTable="ItemNameColumn" msprop:Generator_UserColumnName="ItemName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ItemCode" msprop:Generator_ColumnVarNameInTable="columnItemCode" msprop:Generator_ColumnPropNameInRow="ItemCode" msprop:Generator_ColumnPropNameInTable="ItemCodeColumn" msprop:Generator_UserColumnName="ItemCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Units" msprop:Generator_ColumnVarNameInTable="columnUnits" msprop:Generator_ColumnPropNameInRow="Units" msprop:Generator_ColumnPropNameInTable="UnitsColumn" msprop:Generator_UserColumnName="Units" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubGroup" msprop:Generator_ColumnVarNameInTable="columnSubGroup" msprop:Generator_ColumnPropNameInRow="SubGroup" msprop:Generator_ColumnPropNameInTable="SubGroupColumn" msprop:Generator_UserColumnName="SubGroup" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Stock" msprop:Generator_ColumnVarNameInTable="columnStock" msprop:Generator_ColumnPropNameInRow="Stock" msprop:Generator_ColumnPropNameInTable="StockColumn" msprop:Generator_UserColumnName="Stock" type="xs:double" minOccurs="0" />
+              <xs:element name="UnitPrice" msprop:Generator_ColumnVarNameInTable="columnUnitPrice" msprop:Generator_ColumnPropNameInRow="UnitPrice" msprop:Generator_ColumnPropNameInTable="UnitPriceColumn" msprop:Generator_UserColumnName="UnitPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StockValue" msprop:Generator_ColumnVarNameInTable="columnStockValue" msprop:Generator_ColumnPropNameInRow="StockValue" msprop:Generator_ColumnPropNameInTable="StockValueColumn" msprop:Generator_UserColumnName="StockValue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StoresItemName" msprop:Generator_ColumnVarNameInTable="columnStoresItemName" msprop:Generator_ColumnPropNameInRow="StoresItemName" msprop:Generator_ColumnPropNameInTable="StoresItemNameColumn" msprop:Generator_UserColumnName="StoresItemName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StoresItemCode" msprop:Generator_ColumnVarNameInTable="columnStoresItemCode" msprop:Generator_ColumnPropNameInRow="StoresItemCode" msprop:Generator_ColumnPropNameInTable="StoresItemCodeColumn" msprop:Generator_UserColumnName="StoresItemCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StoresUnits" msprop:Generator_ColumnVarNameInTable="columnStoresUnits" msprop:Generator_ColumnPropNameInRow="StoresUnits" msprop:Generator_ColumnPropNameInTable="StoresUnitsColumn" msprop:Generator_UserColumnName="StoresUnits" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StoresPrice" msprop:Generator_ColumnVarNameInTable="columnStoresPrice" msprop:Generator_ColumnPropNameInRow="StoresPrice" msprop:Generator_ColumnPropNameInTable="StoresPriceColumn" msprop:Generator_UserColumnName="StoresPrice" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StoresSOH" msprop:Generator_ColumnVarNameInTable="columnStoresSOH" msprop:Generator_ColumnPropNameInRow="StoresSOH" msprop:Generator_ColumnPropNameInTable="StoresSOHColumn" msprop:Generator_UserColumnName="StoresSOH" type="xs:decimal" minOccurs="0" />
+              <xs:element name="StoresStockValue" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnStoresStockValue" msprop:Generator_ColumnPropNameInRow="StoresStockValue" msprop:Generator_ColumnPropNameInTable="StoresStockValueColumn" msprop:Generator_UserColumnName="StoresStockValue" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hisa", "Hisa\Hisa.csproj", "{B84355D3-B067-4652-8BB9-E3142E2B13FC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Hisa_Setup", "Hisa_Setup\Hisa_Setup.vdproj", "{CBB2E10A-EE13-40EA-B3BD-03220A24B2BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B84355D3-B067-4652-8BB9-E3142E2B13FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B84355D3-B067-4652-8BB9-E3142E2B13FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B84355D3-B067-4652-8BB9-E3142E2B13FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B84355D3-B067-4652-8BB9-E3142E2B13FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB2E10A-EE13-40EA-B3BD-03220A24B2BC}.Debug|Any CPU.ActiveCfg = Debug
+		{CBB2E10A-EE13-40EA-B3BD-03220A24B2BC}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6231B74D-0E17-470D-84E3-44F25C486858}
+	EndGlobalSection
+EndGlobal

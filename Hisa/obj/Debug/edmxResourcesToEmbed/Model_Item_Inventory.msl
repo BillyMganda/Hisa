@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HisaModel_Inventory_ItemsStoreContainer" CdmEntityContainer="HisaEntities_Inventory_Items">
+    <EntitySetMapping Name="StockItems">
+      <EntityTypeMapping TypeName="HisaModel_Inventory_Items.StockItem">
+        <MappingFragment StoreEntitySet="StockItems">
+          <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="Units" ColumnName="Units" />
+          <ScalarProperty Name="MainGroup" ColumnName="MainGroup" />
+          <ScalarProperty Name="SubGroup" ColumnName="SubGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
